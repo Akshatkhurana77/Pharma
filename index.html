@@ -19,9 +19,35 @@
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(10, 111, 74, 0.85), rgba(10, 111, 74, 0.85)), 
-                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-        }
+    background: radial-gradient(circle at 70% 50%,
+        rgba(52, 211, 153, 0.4),
+        rgba(6, 78, 59, 0.95) 60%),
+        linear-gradient(135deg, #022c22, #065f46);
+
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-bg::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:url('couple-silhouette.png') no-repeat right center;
+    background-size:45%;
+    opacity:0.95;
+}
+.hero-bg::after{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:15%;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(110,231,183,.3);
+    filter:blur(150px);
+    border-radius:50%;
+}
 
         .scroll-indicator {
             animation: bounce 2s infinite;
@@ -93,45 +119,62 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="hero-bg text-white min-h-screen flex items-center relative">
-        <div class="max-w-7xl mx-auto px-6 py-24 text-center md:text-left">
-            <div class="max-w-2xl mx-auto md:mx-0">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-3 rounded-full mb-6">
-                    <span class="text-yellow-300">★</span>
-                    <span class="uppercase tracking-widest text-sm">Premium Sexual Wellness</span>
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl font-bold leading-tight heading-font mb-6">
-                    COUPLE-X
-                </h1>
-                <p class="text-3xl md:text-4xl text-emerald-100 mb-10">
-                    Happiness , <br>Without Worries.
-                </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#products" 
-                       class="bg-white text-emerald-900 hover:bg-emerald-50 px-10 py-5 rounded-2xl font-semibold text-lg inline-flex items-center justify-center gap-3 transition-all">
-                        <i class="fas fa-shopping-bag"></i>
-                        EXPLORE PRODUCTS
-                    </a>
-                    <a href="#enquiry" 
-                       class="border-2 border-white hover:bg-white/10 px-10 py-5 rounded-2xl font-semibold text-lg transition-all">
-                        BECOME DISTRIBUTOR
-                    </a>
-                </div>
+    <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+
+        <div class="max-w-2xl">
+
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-3 border border-yellow-500/50
+                        rounded-full px-8 py-4 mb-8 bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-star text-yellow-400"></i>
+                <span class="uppercase tracking-wider font-semibold">
+                    Premium Sexual Wellness
+                </span>
             </div>
+
+            <!-- Heading -->
+            <h1 class="heading-font text-7xl md:text-8xl font-bold mb-6">
+                COUPLE-X
+            </h1>
+
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-[2px] w-32 bg-yellow-500"></div>
+                <i class="fas fa-heart text-yellow-400"></i>
+                <div class="h-[2px] w-32 bg-yellow-500"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <h2 class="text-4xl md:text-6xl font-semibold leading-tight mb-12">
+                Happiness,<br>
+                Without Worries.
+            </h2>
+
+            <div class="flex flex-wrap gap-5">
+
+                <a href="#products"
+                    class="bg-yellow-200 text-emerald-900 px-10 py-5 rounded-2xl
+                           font-bold text-lg flex items-center gap-3">
+
+                    <i class="fas fa-shopping-bag"></i>
+                    EXPLORE PRODUCTS
+                </a>
+
+                <a href="#enquiry"
+                    class="border-2 border-white/70 px-10 py-5 rounded-2xl
+                           font-bold text-lg flex items-center gap-3">
+
+                    <i class="fas fa-users"></i>
+                    BECOME DISTRIBUTOR
+                </a>
+
+            </div>
+
         </div>
 
-        <!-- Enhanced Scroll to Explore -->
-        <div onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" 
-             class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group">
-            <div class="text-xs tracking-[3px] font-medium mb-3 text-emerald-100 group-hover:text-white transition-colors">
-                SCROLL TO EXPLORE
-            </div>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down text-4xl text-emerald-200 group-hover:text-white transition-colors"></i>
-            </div>
-        </div>
-    </section>
+    </div>
+
+</section>
 
     <!-- ABOUT US -->
     <section id="about" class="py-20 bg-white">
